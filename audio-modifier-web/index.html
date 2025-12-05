@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +10,27 @@
     <div class="container">
         <h1>Audio Modifier</h1>
         <div class="controls">
-            <label for="pitch">Pitch Adjustment:</label>
+            <label for="fileInput">Importar áudio:</label>
+            <input type="file" id="fileInput" accept="audio/*">
+
+            <label for="pitch">Pitch (semitones):</label>
             <input type="range" id="pitch" min="-12" max="12" value="0">
             <span id="pitchValue">0</span> semitones
 
-            <label for="speed">Speed Adjustment:</label>
+            <label for="speed">Velocidade:</label>
             <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1">
             <span id="speedValue">1.0</span>x
+
+            <div class="buttons">
+                <button id="playButton" disabled>Play</button>
+                <button id="stopButton" disabled>Stop</button>
+                <button id="downloadButton" disabled>Download Modified Audio</button>
+            </div>
         </div>
-        <button id="downloadButton">Download Modified Audio</button>
+
         <audio id="audioPlayer" controls></audio>
     </div>
+
     <script src="src/js/audioProcessor.js"></script>
     <script src="src/js/main.js"></script>
 </body>
